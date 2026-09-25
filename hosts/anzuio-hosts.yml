@@ -3,32 +3,77 @@ method: derived
 source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
 generator: derive-hosts.py
 summary:
-  hosts: 2
+  hosts: 5
   own: 0
-  other_domain: 1
+  other_domain: 4
   platform: 1
   roles:
-  - other
+  - api
+  - docs
+  - identity
   - website
 hosts:
+- host: api.anzu.io
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: anzu.io
+  role: api
+  relation: other-domain
+- host: docs.anzu.io
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  title: Login
+  status: 200
+  registrable_domain: anzu.io
+  role: docs
+  relation: other-domain
 - host: equityzen.com
   found_by:
   - pointer
-  - vendor-detect
   types:
   - Website
-  serves:
-  - cdn
-  vendor: akamai
+  serves: []
   registrable_domain: equityzen.com
   role: website
   relation: platform
-- host: www.anzu.io
+- host: identity.document360.io
   found_by:
-  - apis[]
+  - docs-index
   types: []
   serves:
   - docs
+  registrable_domain: document360.io
+  role: identity
+  relation: other-domain
+- host: www.anzu.io
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Documentation
+  - Blog
+  - Pricing
+  - Support
+  - TermsOfService
+  - PrivacyPolicy
+  serves:
+  - docs
+  - cdn
+  - hosting
+  vendor: cloudflare
   registrable_domain: anzu.io
-  role: other
+  role: docs
   relation: other-domain

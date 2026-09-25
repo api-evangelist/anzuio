@@ -2,8 +2,7 @@ aid: anzuio
 
 name: Anzuio
 
-description: 'Anzuio is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub
-  for full-pipeline profiling.'
+description: 'Anzuio is a programmatic in‑game advertising platform that enables developers to monetize their games through intrinsic ad placements. Founded to provide a seamless SDK and API for integrating ads directly into game engines, Anzuio offers tools for ad selection, fraud detection, and brand uplift measurement. The company serves mobile, PC, and console developers, delivering real‑time ad serving and detailed analytics to maximize revenue while preserving player experience. Anzuio’s platform is built for scalability and compliance, supporting global ad networks and offering extensive documentation for developers.'
 
 url: https://raw.githubusercontent.com/api-evangelist/anzuio/refs/heads/main/apis.yml
 
@@ -22,6 +21,10 @@ modified: '2026-09-25'
 
 tags:
 - Company
+- Advertising
+- Gaming
+- SDK
+- API
 
 maintainers:
 - FN: Kin Lane
@@ -30,6 +33,10 @@ maintainers:
   email: info@apis.io
 
 common:
+- type: LLMsTxt
+  url: llms/anzuio-llms.txt
+- type: WellKnown
+  url: well-known/anzuio-well-known.yml
 - type: Hosts
   url: hosts/anzuio-hosts.yml
 - type: Vendors
@@ -38,6 +45,18 @@ common:
   url: security/anzuio-domain-security.yml
 - type: Website
   url: https://equityzen.com/company/anzuio
+- type: Documentation
+  url: https://www.anzu.io/developers
+- type: Blog
+  url: https://www.anzu.io/blog
+- type: Pricing
+  url: https://www.anzu.io/advertisers
+- type: Support
+  url: https://www.anzu.io/contact
+- type: TermsOfService
+  url: https://www.anzu.io/advertisers-terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.anzu.io/privacy-policy
 
 apis:
 - name: Anzu API
@@ -57,6 +76,6 @@ x-coverage:
 x-enrichment:
   date: '2026-09-25'
   status: enriched
-  artifacts_added: 4
+  artifacts_added: 5
   pass: modular-v1
   engine: identity=local,contract=local,surfaces=local,docs=local
